@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace ExamenIndividual
 {
     internal class Personaje
     {
-        string nombre;
-        float vida, danio;
+        public string nombre;
+        public float vida, danio;
         List<Items> listaDeItems;
 
         public Personaje(string nombre, float vida, float danio, List<Items> listaDeItems)
@@ -17,6 +18,10 @@ namespace ExamenIndividual
 
         }
 
+        public override string ToString()
+        {
+            return $"Nombre: {nombre}, vida: {vida}, danio: {danio}";
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ExamenIndividual
 {
@@ -11,6 +12,30 @@ namespace ExamenIndividual
         {
             this.mana = mana;
         }
+
+        public void Atacar(Personaje enemigo)
+        {
+            if (enemigo != null)
+            {
+                enemigo.vida-= danio; 
+           
+
+                if (enemigo.vida <= 0)
+                {
+                    Console.WriteLine($"{enemigo.nombre} ha sido derrotado.");
+                    
+                }
+                else
+                {
+                    Console.WriteLine($"{enemigo.nombre} tiene {enemigo.vida} de vida restante.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("El enemigo no es válido.");
+            }
+        }
+
 
     }
 }
